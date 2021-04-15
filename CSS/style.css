@@ -1,0 +1,169 @@
+/*
+    1- Common styles
+    2- General styles
+    3- Sections
+        3.1- Header
+        3.2- Home
+        3.3- About
+        3.4- Portfolio
+        3.5- offer
+        3.5- services
+        3.7- Blog Page
+        3.8- Contact
+        3.9- Footer section
+*/
+
+/* 1- Common styles
+        - container
+        - overlay
+        - opacity hover
+        - section header
+        - section padding
+        - hover effect 1 ( left to right )
+        - hover effect 2 ( top to bottom )
+*/
+
+/* General styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --mainColor: #7b5244;
+    --subColor: #333;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.list-unstyled {
+    list-style: none;
+}
+
+/* Header */
+header {
+    padding: 30px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content ul li {
+    display: inline-block
+}
+
+.header-content ul li, 
+.header-content ul li a {
+    color: var(--subColor);
+}
+
+.header-content .logo {
+    flex: 1;
+    max-width: 170px;
+}
+
+.header-content .logo img {
+    max-width: 140px;
+}
+
+.header-content nav {
+    flex: 3;
+    text-align: center;
+}
+
+.header-content nav ul li .link-item {
+    display: block;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 14px;
+    position: relative;
+}
+
+.header-content nav ul li .link-item::before,
+.header-content nav ul li .link-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-color: var(--mainColor);
+    border-style: solid;
+    transition: transform 0.3s;
+}
+
+.header-content nav ul li .link-item::before {
+    width: 100%;
+    height: calc(100% + 2px);
+    border-width: 0 2px;
+    transform: scale3d(1, 0, 1);
+}
+
+.header-content nav ul li .link-item:hover::before {
+    transform: scale3d(1, 1, 1);
+}
+
+.header-content nav ul li .link-item::after {
+    width: calc(100% + 4px);
+    height: 100%;
+    border-width: 2px 0;
+    transform: scale3d(0, 1, 1);
+    transform-origin: left;
+}
+
+.header-content nav ul li .link-item:hover::after {
+    transform: scale3d(1, 1, 1);
+    transition-delay: 0.1s;
+}
+
+.header-content .login {
+    flex: 1;
+    text-align: right;
+}
+
+.header-content .login ul li {
+    padding: 10px 5px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 7px;
+}
+
+.header-content .login ul li:last-child i {
+    position: relative;
+    margin-right: 15px;
+}
+
+.header-content .login ul li:last-child i::after {
+    content: "0";
+    position: absolute;
+    bottom: -10px;
+    right: -15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--mainColor);
+    color:#fff;
+    font-size: 14px;
+    padding: 4px;
+    line-height: 10px;
+    text-align: center;
+}
+
+/* Slider */
+section.slider img {
+    width: 100%;
+}
